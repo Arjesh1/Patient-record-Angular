@@ -2,12 +2,12 @@
   <table>
     <thead>
       <tr>
-        <th >hello header</th>
+        <th *ngFor="let header of headers">{{ header.name }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr >
-        <td >hi body</td>
+      <tr *ngFor="let row of tableData?.rows">
+        <td>Values</td>
       </tr>
     </tbody>
   </table>

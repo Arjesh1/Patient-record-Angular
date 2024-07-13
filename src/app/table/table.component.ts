@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
-import { Component, Input  } from '@angular/core';
-import { TableData } from '../../data/table';
+import { Component, Input, SimpleChanges  } from '@angular/core';
+import { Header, TableData } from '../../data/table';
 
 @Component({
   selector: 'app-table',
@@ -12,5 +12,12 @@ import { TableData } from '../../data/table';
 export class TableComponent {
   @Input() title?: string;
   @Input() tableData?: TableData;
+  headers: Header[] = [];
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['tableData'] && this.tableData) {
+      this.headers = Object.values(this.tableData.header);
+    }
+  }
 
 }

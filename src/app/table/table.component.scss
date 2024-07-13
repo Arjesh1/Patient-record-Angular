@@ -1,0 +1,63 @@
+  /* Table Styles */
+  
+  .table-wrapper {
+    margin: 5px 20px;
+    box-shadow: 0px 35px 50px rgba(240, 238, 238, 0.2);
+  }
+  
+  table {
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+  
+    td,
+    th {
+      text-align: start;
+      padding: 14px 6px;
+    }
+  
+    td {
+      border-right: 1px solid #dbd8d8;
+      font-size: 14px;
+      padding: 3px 6px;
+    }
+  
+    thead th {
+      color: #ffffff;
+      background: #68a3e6;
+  
+      &:nth-child(odd) {
+        background: #324960;
+      }
+    }
+  
+    tr:nth-child(even) {
+      background: #f8f8f8;
+    }
+  
+    tbody tr:hover {
+      background-color: #b9b9b9;
+      font-weight: bold;
+    }
+  
+    th:nth-child(8) td:nth-child(8) {
+      width: 100px;
+    }
+  
+    input,
+    select {
+      width: 100%;
+      padding: 6px 5px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }

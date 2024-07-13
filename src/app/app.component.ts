@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../data/data';
 import { TableData } from '../data/table';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgFor, NgIf, FormsModule],
+  imports: [NgFor, NgIf, FormsModule, TableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

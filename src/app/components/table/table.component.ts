@@ -1,6 +1,6 @@
 import { NgFor  } from '@angular/common';
 import { Component, Input, SimpleChanges  } from '@angular/core';
-import { Row, TableData } from '../../data/table';
+import { Row, TableData } from '../../../data/table';
 
 type NewHeaderType = { name: string } & (
   | {

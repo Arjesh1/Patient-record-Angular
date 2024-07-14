@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../data/data';
 import { TableData } from '../data/table';
-import { TableComponent } from './table/table.component';
+import { TableComponent } from './components/table/table.component';
 
 @Component({
   selector: 'app-root',

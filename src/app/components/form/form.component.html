@@ -1,0 +1,45 @@
+<form [formGroup]="patientData" (ngSubmit)="handleSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" formControlName=1 required />
+    </div>
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" formControlName=2 required />
+    </div>
+    <div>
+      <label for="bloodGroup">Blood Group</label>
+      <select id="bloodGroup" name="bloodGroup" formControlName=3 required>
+        <option value="">Select</option>
+        <option value=1>A</option>
+        <option value=2>B</option>
+        <option value=3>AB</option>
+        <option value=4>O</option>
+      </select>
+    </div>
+    <div>
+      <label for="refNumber">Reference Number</label>
+      <input type="text" id="refNumber" name="refNumber" formControlName=4 />
+    </div>
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" formControlName=5 required />
+    </div>
+    <div>
+      <label for="admissionReason">Admission Reason</label>
+      <select id="admissionReason" name="admissionReason" formControlName=6 required>
+        <option value="">Select</option>
+        <option value=1>Cardiovascular</option>
+        <option value=2>Diabetes</option>
+      </select>
+    </div>
+    <div>
+      <label for="admissionDateTime">Admission Date & Time</label>
+      <input type="datetime-local" id="admissionDateTime" name="admissionDateTime" formControlName=7 required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" formControlName=8></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>

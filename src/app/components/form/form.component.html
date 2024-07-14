@@ -23,7 +23,7 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="bloodGroup">Blood Group</label>
+      <label for="bloodGroup">Blood Type</label>
       <select id="bloodGroup" name="bloodGroup" formControlName=3 required>
         <option value="">Select</option>
         <option value=1>A</option>
@@ -50,8 +50,8 @@
   </div>
 
     <div class="form-group">
-      <label for="description">Description</label>
-      <textarea id="description" name="description" formControlName=8></textarea>
+      <label for="description">Note</label>
+      <textarea id="description" name="description" formControlName=8 required></textarea>
     </div>
-    <button type="submit">Add</button>
+    <button type="submit" [disabled]="!patientData.valid">Add</button>
   </form>

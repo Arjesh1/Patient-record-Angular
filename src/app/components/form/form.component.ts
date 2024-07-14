@@ -32,5 +32,6 @@ export class FormComponent {
       const translatedData = {...this.patientData.value, [3]:Number(this.patientData.value[3]), [6]:Number(this.patientData.value[6]), [7]: this.patientData.value[7].replace("T"," "), [4]: this.patientData.value[4]?.toString()}
       this.formData.emit(translatedData as Row)
     }
+    this.patientData.reset()
   }
 }

@@ -7,7 +7,27 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of tableData?.rows">
-        <td>Values</td>
+        <td *ngFor="let cell of valuesInRows(row); let index = index">
+          @if(headers[index].uiType === 'text'){
+            <p>{{cell}}</p>
+          }
+
+          @if(headers[index].uiType === 'input'){
+            <input type="text" value={{cell}} />
+          }
+
+          @if(headers[index].uiType === 'dateTime'){
+            @if(headers[index].format){
+              <time dateTime={{headers[index].format}}>{{cell}}</time>
+            }
+          }
+
+          @if(headers[index].uiType === 'dropdown'){
+            <select value={{cell}} >
+              <option *ngFor="let option of headers[index].options" [value]="option.value">{{option.displayText}}</option>
+            </select>
+          }
+          </td>
       </tr>
     </tbody>
   </table>

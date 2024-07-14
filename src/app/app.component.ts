@@ -26,7 +26,6 @@ export class AppComponent {
   }
 
   updateData(patientData:Row){
-    this.tableData?.rows.push(patientData)
-    console.log(patientData)
+      this.tableData?.rows.push(patientData)
   }
 }

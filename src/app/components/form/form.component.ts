@@ -2,6 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Row } from '../../../data/table';
 
+export type FormData = {
+  [id: string]: string | number;
+};
+
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -10,7 +14,7 @@ import { Row } from '../../../data/table';
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
-  @Output() formData = new EventEmitter<any>()
+  @Output() formData = new EventEmitter<FormData| Row>()
 
   patientData = new FormGroup({
     1: new FormControl(''),
@@ -24,7 +28,9 @@ export class FormComponent {
   });
 
   handleSubmit() {
-    this.formData.emit(this.patientData.value)
+    if(this.patientData.valid && this.patientData.value[7]){
+      const translatedData = {...this.patientData.value, [3]:Number(this.patientData.value[3]), [6]:Number(this.patientData.value[6]), [7]: this.patientData.value[7].replace("T"," "), [4]: this.patientData.value[4]?.toString()}
+      this.formData.emit(translatedData as Row)
+    }
   }
-
 }
